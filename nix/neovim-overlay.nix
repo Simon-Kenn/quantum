@@ -13,8 +13,13 @@ with final.pkgs.lib; let
   mkNeovim = pkgs.callPackage ./mkNeovim.nix { inherit pkgs-wrapNeovim; };
 
   all-plugins = with pkgs.vimPlugins; [
-    catppuccin-nvim
+    # core
     which-key-nvim
+
+    # ui
+    catppuccin-nvim
+    nvim-web-devicons
+    lualine-nvim
   ];
 
   extraPackages = with pkgs; [
