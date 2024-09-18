@@ -13,13 +13,24 @@ with final.pkgs.lib; let
   mkNeovim = pkgs.callPackage ./mkNeovim.nix { inherit pkgs-wrapNeovim; };
 
   all-plugins = with pkgs.vimPlugins; [
-    # core
+    # -- core --
     which-key-nvim
+    plenary-nvim
 
-    # ui
+    # -- editor -- 
+    telescope-nvim
+    telescope-fzf-native-nvim
+
+    # -- ui --
     catppuccin-nvim
     nvim-web-devicons
     lualine-nvim
+
+    # -- git --
+    diffview-nvim
+    gitsigns-nvim
+    neogit
+
   ];
 
   extraPackages = with pkgs; [
