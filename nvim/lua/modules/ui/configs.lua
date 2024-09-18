@@ -1,1 +1,1 @@
-require('theme')
+require('modules.ui.theme')

@@ -1,2 +1,2 @@
-require('core.options')
-require('modules.ui.theme')
+require('core')
+require('modules.ui')
