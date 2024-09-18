@@ -14,6 +14,7 @@ with final.pkgs.lib; let
 
   all-plugins = with pkgs.vimPlugins; [
     catppuccin-nvim
+    which-key-nvim
   ];
 
   extraPackages = with pkgs; [
