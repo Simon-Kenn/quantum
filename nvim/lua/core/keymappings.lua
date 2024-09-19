@@ -1,8 +1,34 @@
 local m = vim.keymap.set
+local wk = require('which-key')
 local g = vim.g
 local noremap = { "n", "v", "o"}
 
 g.mapleader = " "
+
+wk.add({
+	{ "<leader>c", group = "Window"}
+})
+
+m('n', "<leader>cs", "<C-w>s", { desc = "Split window"})
+m('n', "<leader>cv", "<C-w>v", { desc = "Split window verticaly"})
+m('n', "<leader>cw", "<C-w>w", { desc = "Switch windows"})
+m('n', "<leader>cq", "<C-w>q", { desc = "Quit window"})
+m('n', "<leader>co", "<C-w>o", { desc = "Close all other windows"})
+m('n', "<leader>ct", "<C-w>T", { desc = "Break out into a new tab"})
+m('n', "<leader>cx", "<C-w>x", { desc = "Swap current with next"})
+m('n', "<leader>c+", "<C-w>+", { desc = "Increase height"})
+m('n', "<leader>c-", "<C-w>-", { desc = "Decrease height"})
+m('n', "<leader>c>", "<C-w>>", { desc = "Increase width"})
+m('n', "<leader>c<", "<C-w><", { desc = "Decrease width"})
+m('n', "<leader>c=", "<C-w>=", { desc = "Equally high and wide"})
+m('n', "<leader>c_", "<C-w>_", { desc = "Max out the height"})
+m('n', "<leader>c|", "<C-w>|", { desc = "Max out the width"})
+
+m('n', "<leader>t", "<C-w>h", { desc = "Left window"})
+m('n', "<leader>s", "<C-w>j", { desc = "Down window"})
+m('n', "<leader>r", "<C-w>k", { desc = "Up window"})
+m('n', "<leader>n", "<C-w>l", { desc = "Right window"})
+
 
 m("n", "W", "<cmd>WhichKey<cr>", { desc = "Which-key"})
 
