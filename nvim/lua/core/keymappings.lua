@@ -24,10 +24,10 @@ m('n', "<leader>c=", "<C-w>=", { desc = "Equally high and wide"})
 m('n', "<leader>c_", "<C-w>_", { desc = "Max out the height"})
 m('n', "<leader>c|", "<C-w>|", { desc = "Max out the width"})
 
-m('n', "<leader>t", "<C-w>h", { desc = "Left window"})
-m('n', "<leader>s", "<C-w>j", { desc = "Down window"})
-m('n', "<leader>r", "<C-w>k", { desc = "Up window"})
-m('n', "<leader>n", "<C-w>l", { desc = "Right window"})
+m('n', "<C-t>", "<C-w>h", { desc = "Left window"})
+m('n', "<C-s>", "<C-w>j", { desc = "Down window"})
+m('n', "<C-r>", "<C-w>k", { desc = "Up window"})
+m('n', "<C-n>", "<C-w>l", { desc = "Right window"})
 
 
 m("n", "W", "<cmd>WhichKey<cr>", { desc = "Which-key"})
