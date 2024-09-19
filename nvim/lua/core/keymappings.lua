@@ -1,5 +1,8 @@
 local m = vim.keymap.set
+local g = vim.g
 local noremap = { "n", "v", "o"}
+
+g.mapleader = " "
 
 m("n", "W", "<cmd>WhichKey<cr>", { desc = "Which-key"})
 
