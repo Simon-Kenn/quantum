@@ -1,7 +1,7 @@
 require('gitsigns').setup({})
 require('neogit').setup({
 	graph_style = "unicode",
-	use_default_keymaps = true,
+	use_default_keymaps = false,
 	mappings = {
     commit_editor = {
       ["q"] = "Close",
