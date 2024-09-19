@@ -36,6 +36,8 @@ with final.pkgs.lib; let
   extraPackages = with pkgs; [
     lua-language-server
     nil
+    ripgrep
+    fd
   ];
 in {
   nvim-pkg = mkNeovim {
