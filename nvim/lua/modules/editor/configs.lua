@@ -1,6 +1,10 @@
 require('telescope').setup({}) -- TODO: Create shortcut and enhence configuration
 require('telescope').load_extension('fzf')
 
+require("nvim-autopairs").setup({})
+require("auto-save").setup({})
+require("auto-session").setup({})
+
 require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,
