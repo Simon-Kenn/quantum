@@ -14,7 +14,7 @@ o.scrolloff = 999
 
 o.foldenable = true
 o.foldmethod = "expr"
-o.foldexpr = "v:lua.vim.treesitter.foldexp()"
+o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 o.foldtext = ""
 o.fillchars = {
   foldclose = "",
