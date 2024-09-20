@@ -3,12 +3,12 @@ local o = vim.opt
 o.splitbelow = true
 o.splitright = true
 
-o.smarttab = true
-o.autoindent = true
-o.smartindent = true
+o.expandtab = true
 o.tabstop = 2
 o.shiftwidth = 2
 o.softtabstop = 2
+
+o.smartindent = true
 
 o.scrolloff = 999
 
