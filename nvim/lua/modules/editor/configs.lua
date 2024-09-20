@@ -1,6 +1,7 @@
 require('telescope').setup({}) -- TODO: Create shortcut and enhence configuration
 require('telescope').load_extension('fzf')
 -- TODO: add telescope tab extension
+-- TODO: add terminal manipulation
 
 require("nvim-autopairs").setup({})
 require("rainbow-delimiters.setup").setup({})
