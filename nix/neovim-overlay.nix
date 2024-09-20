@@ -22,6 +22,9 @@ with final.pkgs.lib; let
     telescope-fzf-native-nvim
     nvim-treesitter.withAllGrammars
     nvim-treesitter-textobjects
+    nvim-treesitter-context
+    rainbow-delimiters-nvim
+    nvim-surround
     auto-save-nvim
     nvim-autopairs
     auto-session
@@ -44,6 +47,7 @@ with final.pkgs.lib; let
     nil
     ripgrep
     fd
+    clang-tools
   ];
 in {
   nvim-pkg = mkNeovim {
