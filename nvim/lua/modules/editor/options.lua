@@ -12,10 +12,17 @@ o.softtabstop = 2
 
 o.scrolloff = 999
 
-o.foldcolumn = "1"
-o.foldlevel = 99
-o.foldlevelstart = 99
 o.foldenable = true
+o.foldmethod = "expr"
+o.foldexpr = "v:lua.vim.treesitter.foldexp()"
+o.foldtext = ""
+o.fillchars = {
+  foldclose = "",
+  foldopen = "",
+}
+--o.foldcolumn = "1"
+--o.foldlevel = 99
+--o.foldlevelstart = 99
 
 o.swapfile = false
 o.backup = false
