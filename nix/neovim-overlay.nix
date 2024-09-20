@@ -21,6 +21,7 @@ with final.pkgs.lib; let
     telescope-nvim
     telescope-fzf-native-nvim
     nvim-treesitter.withAllGrammars
+    nvim-treesitter-textobjects
     auto-save-nvim
     nvim-autopairs
     auto-session
