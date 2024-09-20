@@ -25,6 +25,7 @@ with final.pkgs.lib; let
     catppuccin-nvim
     nvim-web-devicons
     lualine-nvim
+    tabby-nvim
 
     # -- git --
     diffview-nvim

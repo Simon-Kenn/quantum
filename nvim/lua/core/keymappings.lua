@@ -6,7 +6,8 @@ local noremap = { "n", "v", "o"}
 g.mapleader = " "
 
 wk.add({
-	{ "<leader>c", group = "Window"}
+	{ "<leader>c", group = "Windows"},
+	{ "<leader>t", group = "Tabs"}
 })
 
 m('n', "<leader>cs", "<C-w>s", { desc = "Split window"})
@@ -23,11 +24,16 @@ m('n', "<leader>c<", "<C-w><", { desc = "Decrease width"})
 m('n', "<leader>c=", "<C-w>=", { desc = "Equally high and wide"})
 m('n', "<leader>c_", "<C-w>_", { desc = "Max out the height"})
 m('n', "<leader>c|", "<C-w>|", { desc = "Max out the width"})
-
 m('n', "<C-t>", "<C-w>h", { desc = "Left window"})
 m('n', "<C-s>", "<C-w>j", { desc = "Down window"})
 m('n', "<C-r>", "<C-w>k", { desc = "Up window"})
 m('n', "<C-n>", "<C-w>l", { desc = "Right window"})
+
+m('n', "<leader>tn", ":$tabnew<cr>", {noremap = true, desc = "New tab"})
+m('n', "<leader>tc", ":tabclose<cr>", {noremap = true, desc = "Close tab"})
+m('n', "<leader>to", ":tabonly<cr>", {noremap = true, desc = "Tab only"})
+m('n', "<leader>tmp", ":-tabmove<cr>", {noremap = true, desc = "Move te previous"})
+m('n', "<leader>tmn", ":+tabmove<cr>", {noremap = true, desc = "Move to next"})
 
 
 m("n", "W", "<cmd>WhichKey<cr>", { desc = "Which-key"})
@@ -64,8 +70,8 @@ m(noremap, "É", "W", { desc = "Next WORD"})
 m(noremap, "è", "ge", { desc = "Prev end of word"})
 m(noremap, "È", "gE", { desc = "Prev end of Word"})
 
-m(noremap, "gb", "gt", { desc = "Go to the next tab page"})
-m(noremap, "gé", "gT", { desc = "Go to the previous tab page"})
+m(noremap, "gé", "gt", { desc = "Go to the next tab page"})
+m(noremap, "gb", "gT", { desc = "Go to the previous tab page"})
 
 m("o", "aé", "aw", { desc = "word with ws"})
 m("o", "aÉ", "aW", { desc = "WORD with ws"})
