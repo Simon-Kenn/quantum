@@ -20,6 +20,7 @@ with final.pkgs.lib; let
     # -- editor -- 
     telescope-nvim
     telescope-fzf-native-nvim
+    nvim-treesitter.withAllGrammars
 
     # -- ui --
     catppuccin-nvim
