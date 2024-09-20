@@ -1,4 +1,4 @@
-require('telescope').setup({})
+require('telescope').setup({}) -- TODO: Create shortcut and enhence configuration
 require('telescope').load_extension('fzf')
 
 require('nvim-treesitter.configs').setup({
