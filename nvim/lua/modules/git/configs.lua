@@ -1,4 +1,6 @@
-require('gitsigns').setup({})
+require('gitsigns').setup({
+  current_line_blame = true,
+})
 require('neogit').setup({
 	graph_style = "unicode",
 	use_default_keymaps = false,
