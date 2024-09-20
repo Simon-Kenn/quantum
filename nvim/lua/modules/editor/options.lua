@@ -30,3 +30,6 @@ o.undodir = vim.fn.expand("~") .."/.vim/undodir"
 o.undofile = true
 
 o.ignorecase = true
+o.incsearch = true
+o.smartcase = true
+o.hlsearch = true
