@@ -3,7 +3,8 @@ local wk = require('which-key')
 local m = vim.keymap.set
 
 wk.add({
-	{ "<leader>f", group = "Telescope"},
+	{ "<leader>f", group = "Telescope" },
+  { "<leader>i", group = "Incremental selection" },
 })
 
 m('n', '<leader>ff', builtin.find_files, {desc = 'Find files'})
