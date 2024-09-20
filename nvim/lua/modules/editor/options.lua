@@ -12,6 +12,8 @@ o.smartindent = true
 
 o.scrolloff = 999
 
+o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 o.foldenable = true
 o.foldmethod = "expr"
 o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
