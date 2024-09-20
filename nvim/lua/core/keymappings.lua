@@ -7,7 +7,7 @@ g.mapleader = " "
 
 wk.add({
 	{ "<leader>c", group = "Windows"},
-	{ "<leader>t", group = "Tabs"}
+	{ "<leader>m", group = "Tabs"}
 })
 
 m('n', "<leader>cs", "<C-w>s", { desc = "Split window"})
@@ -24,16 +24,16 @@ m('n', "<leader>c<", "<C-w><", { desc = "Decrease width"})
 m('n', "<leader>c=", "<C-w>=", { desc = "Equally high and wide"})
 m('n', "<leader>c_", "<C-w>_", { desc = "Max out the height"})
 m('n', "<leader>c|", "<C-w>|", { desc = "Max out the width"})
-m('n', "<C-t>", "<C-w>h", { desc = "Left window"})
-m('n', "<C-s>", "<C-w>j", { desc = "Down window"})
-m('n', "<C-r>", "<C-w>k", { desc = "Up window"})
-m('n', "<C-n>", "<C-w>l", { desc = "Right window"})
+m('n', "<leader>t", "<C-w>h", { desc = ""})
+m('n', "<leader>s", "<C-w>j", { desc = ""})
+m('n', "<leader>r", "<C-w>k", { desc = ""})
+m('n', "<leader>n", "<C-w>l", { desc = ""})
 
-m('n', "<leader>tn", ":$tabnew<cr>", {noremap = true, desc = "New tab"})
-m('n', "<leader>tc", ":tabclose<cr>", {noremap = true, desc = "Close tab"})
-m('n', "<leader>to", ":tabonly<cr>", {noremap = true, desc = "Tab only"})
-m('n', "<leader>tmp", ":-tabmove<cr>", {noremap = true, desc = "Move te previous"})
-m('n', "<leader>tmn", ":+tabmove<cr>", {noremap = true, desc = "Move to next"})
+m('n', "<leader>mn", ":$tabnew<cr>", {noremap = true, desc = "New tab"})
+m('n', "<leader>mc", ":tabclose<cr>", {noremap = true, desc = "Close tab"})
+m('n', "<leader>mo", ":tabonly<cr>", {noremap = true, desc = "Tab only"})
+m('n', "<leader>mmp", ":-tabmove<cr>", {noremap = true, desc = "Move te previous"})
+m('n', "<leader>mmn", ":+tabmove<cr>", {noremap = true, desc = "Move to next"})
 
 
 m("n", "W", "<cmd>WhichKey<cr>", { desc = "Which-key"})
