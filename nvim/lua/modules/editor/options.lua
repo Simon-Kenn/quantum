@@ -22,9 +22,6 @@ o.fillchars = {
   foldclose = "",
   foldopen = "",
 }
---o.foldcolumn = "1"
---o.foldlevel = 99
---o.foldlevelstart = 99
 
 o.swapfile = false
 o.backup = false
