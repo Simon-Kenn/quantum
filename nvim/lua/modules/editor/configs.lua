@@ -3,10 +3,12 @@ require('telescope').load_extension('fzf')
 -- TODO: add telescope tab extension
 
 require("nvim-autopairs").setup({})
+require("rainbow-delimiters.setup").setup({})
+require("nvim-surround").setup({}) -- TODO: add which key tips
 require("auto-save").setup({})
 require("auto-session").setup({})
 
-require('nvim-treesitter.configs').setup({
+require("nvim-treesitter.configs").setup({
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
@@ -44,3 +46,4 @@ require('nvim-treesitter.configs').setup({
     },
   }
 })
+require('treesitter-context').setup({})
