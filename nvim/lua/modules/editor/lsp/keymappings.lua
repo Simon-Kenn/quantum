@@ -1,18 +1,26 @@
-function on_attach(client, bufnr)
-  local map = vim.keymap.set
+local function on_attach(client, bufnr)
+  local function buf_set_keymap(mode, lhs, rhs, desc, opts)
+    opts = opts or {}
+    opts.buffer = bufnr
+    opts.desc = desc
+    vim.keymap.set(mode, lhs, rhs, opts)
+  end
+
   local opts = { noremap = true, silent = true }
 
-  map('n', 'R', vim.lsp.buf.hover, opts, { desc = 'Help/Hover' })
+  -- TODO: enhence lsp keymappings
+  buf_set_keymap('n', 'gd', vim.lsp.buf.definition, 'Go to definition', opts)
+  buf_set_keymap('n', 'gD', vim.lsp.buf.declaration, 'Go to declaration', opts)
+  buf_set_keymap('n', 'gi', vim.lsp.buf.implementation, 'Go to implementation', opts)
+  buf_set_keymap('n', 'gr', vim.lsp.buf.references, 'References', opts)
+  buf_set_keymap('n', 'R', vim.lsp.buf.hover, 'Documentation', opts)
+  buf_set_keymap('n', 'gn', vim.lsp.buf.rename, 'Rename', opts)
+  buf_set_keymap('n', 'g.', vim.lsp.buf.code_action, 'Code action', opts)
 
-  map('n', 'gd', vim.lsp.buf.definition, opts, { desc = 'Go to definition' })
-  map('n', 'gD', vim.lsp.buf.declaration, opts, { desc = 'Go to declaration' })
-  map('n', 'gi', vim.lsp.buf.inmplementation, opts, { desc = 'Go to implementation' })
-  map('n', 'gr', vim.lsp.buf.references, opts, { desc = 'References' })
-
-  map('n', 'grn', vim.lsp.buf.rename, opts, { desc = 'Rename' })
-
-  map({ 'v', 'g.' }, 'gra', vim.lsp.buf.code_action, opts, { desc = 'Code action' })
-  map('i', '<c-u>', vim.lsp.buf.signature_help, opts, { desc = 'Signature help' })
+  --buf_set_keymap('n', '<leader>e', vim.diagnostic.open_float, "Afficher les diagnostics", opts)
+  --buf_set_keymap('n', '[d', vim.diagnostic.goto_prev, "Diagnostic précédent", opts)
+  --buf_set_keymap('n', ']d', vim.diagnostic.goto_next, "Diagnostic suivant", opts)
+  --buf_set_keymap('n', '<leader>q', vim.diagnostic.setloclist, "Ouvrir la liste des diagnostics", opts)
 end
 
 return on_attach
