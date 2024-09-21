@@ -1,9 +1,10 @@
 local cmp = require('cmp')
-local lspkind = {}
+local kind_icons = {}
 -- TODO: Clean this file
 -- TODO: add other source (nerdfonts, etc…)
+-- TODO add snipet
 
-lspkind.icons = {
+kind_icons.icons = {
   Class = '  ',
   Color = '  ',
   Constant = '  ',
@@ -70,6 +71,10 @@ cmp.setup {
     ['<CR>'] = cmp.mapping.confirm { select = false },
   },
   sources = cmp.config.sources({
+    {
+      name = 'lazydev',
+      group_index = 0,
+    },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   }, {
