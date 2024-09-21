@@ -1,6 +1,7 @@
 require('catppuccin').setup({
   flavour = "mocha",
   integrations = {
+    cmp = true,
     which_key = true,
     telescope = true,
     treesitter = true,
