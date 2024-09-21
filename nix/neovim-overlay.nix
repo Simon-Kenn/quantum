@@ -28,6 +28,7 @@ with final.pkgs.lib; let
 
     nvim-lspconfig
     lspkind-nvim
+    lazydev-nvim
 
     # cmp
 
