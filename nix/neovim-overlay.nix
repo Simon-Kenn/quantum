@@ -28,6 +28,9 @@ with final.pkgs.lib; let
     auto-save-nvim
     nvim-autopairs
     auto-session
+    toggleterm-nvim
+
+
 
     # -- ui --
     catppuccin-nvim

@@ -3,6 +3,8 @@ require('telescope').load_extension('fzf')
 -- TODO: add telescope tab extension
 -- TODO: add terminal manipulation
 
+require('toggleterm').setup()
+
 require("nvim-autopairs").setup({})
 require("rainbow-delimiters.setup").setup({})
 require("nvim-surround").setup({}) -- TODO: add which key tips
