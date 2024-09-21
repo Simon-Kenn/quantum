@@ -25,14 +25,16 @@ with final.pkgs.lib; let
     nvim-treesitter-textobjects
     nvim-treesitter-context
     rainbow-delimiters-nvim
-    nvim-surround
 
     nvim-lspconfig
+
+    conform-nvim
 
     auto-save-nvim
     nvim-autopairs
     auto-session
     toggleterm-nvim
+    nvim-surround
 
 
 
@@ -50,11 +52,19 @@ with final.pkgs.lib; let
   ];
 
   extraPackages = with pkgs; [
+    # Language servers
     lua-language-server
     nil
+    clang-tools
+
+
+    # Formater
+    stylua
+    rustfmt
+    nixfmt-classic
+
     ripgrep
     fd
-    clang-tools
   ];
 in {
   nvim-pkg = mkNeovim {
