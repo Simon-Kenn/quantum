@@ -1,5 +1,33 @@
 local cmp = require('cmp')
+local lspkind = {}
 
+lspkind.icons = {
+  Class = '  ',
+  Color = '  ',
+  Constant = '  ',
+  Constructor = '  ',
+  Enum = ' 了',
+  EnumMember = '  ',
+  Event = '  ',
+  Field = ' 󰜢 ',
+  File = '  ',
+  Folder = '  ',
+  Function = '  ',
+  Interface = '  ',
+  Keyword = '  ',
+  Method = ' ƒ ',
+  Module = '  ',
+  Operator = ' 󰆕 ',
+  Property = '  ',
+  Reference = '  ',
+  Snippet = '  ',
+  Struct = '  ',
+  Text = '  ',
+  TypeParameter = '',
+  Unit = ' 󰑭 ',
+  Value = ' 󰎠 ',
+  Variable = '  ',
+}
 local has_words_before = function()
   unpack = unpack or table.unpack
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -46,6 +74,21 @@ cmp.setup {
     { name = 'path' },
     { name = 'buffer' },
   }),
+  formating = {
+    format = function(entry, vim_item) -- FIX: Icon not displaying properly
+      -- Kind icons
+      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+      -- Source
+      vim_item.menu = ({
+        buffer = '[Buffer]',
+        nvim_lsp = '[LSP]',
+        luasnip = '[LuaSnip]',
+        nvim_lua = '[Lua]',
+        latex_symbols = '[LaTeX]',
+      })[entry.source.name]
+      return vim_item
+    end,
+  },
 }
 
 cmp.setup.cmdline({ '/', '?' }, {
