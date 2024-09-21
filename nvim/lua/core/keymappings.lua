@@ -30,7 +30,7 @@ m('n', "<leader>r", "<C-w>k", { desc = ""})
 m('n', "<leader>n", "<C-w>l", { desc = ""})
 
 m('n', "<leader>mn", ":$tabnew<cr>", {noremap = true, desc = "New tab"})
-m('n', "<leader>mc", ":tabclose<cr>", {noremap = true, desc = "Close tab"})
+m('n', "<leader>mq", ":tabclose<cr>", {noremap = true, desc = "Close tab"})
 m('n', "<leader>mo", ":tabonly<cr>", {noremap = true, desc = "Tab only"})
 m('n', "<leader>mmp", ":-tabmove<cr>", {noremap = true, desc = "Move te previous"})
 m('n', "<leader>mmn", ":+tabmove<cr>", {noremap = true, desc = "Move to next"})
