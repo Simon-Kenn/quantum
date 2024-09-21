@@ -15,5 +15,4 @@ require('auto-save').setup {}
 require('auto-session').setup {}
 
 -- TODO: add linter
--- TODO: add formater
 -- TODO: look for trouple.nvim
