@@ -6,6 +6,7 @@ require('modules.editor.completion')
 -- TODO: look for flash.nvim
 
 require('toggleterm').setup()
+require('todo-comments').setup {}
 
 require('nvim-surround').setup {} -- TODO: add which key tips
 
