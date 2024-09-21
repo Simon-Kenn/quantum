@@ -43,6 +43,7 @@ require('lualine').setup({
 	extensions = {}
 })
 
+-- TODO: add command for moovinge and renaming ta
 local theme = {
   fill = 'TabLineFill',
   -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
