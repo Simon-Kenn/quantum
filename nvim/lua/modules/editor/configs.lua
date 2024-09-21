@@ -108,6 +108,8 @@ require('telescope').setup({
 require('telescope').load_extension('fzf')
 -- TODO: add telescope tab extension
 
+-- TODO: look for flash.nvim
+
 require('toggleterm').setup()
 
 require("nvim-autopairs").setup({})
@@ -159,3 +161,4 @@ require('treesitter-context').setup({})
 -- TODO: add lsp 
 -- TODO: add linter
 -- TODO: add formater
+-- TODO: look for trouple.nvim
