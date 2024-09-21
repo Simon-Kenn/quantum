@@ -3,7 +3,7 @@ require('telescope').setup({
   defaults = {
     -- TODO: enhence configuration, read the :h Telescope
     -- TODO: Mappings should be a function in keymappings.lua that we import here
-    mappings = {
+   mappings = {
       i = {
         ["<LeftMouse>"] = {
           actions.mouse_click,
@@ -159,9 +159,6 @@ require("nvim-treesitter.configs").setup({
 })
 require('treesitter-context').setup({})
 
--- TODO: add lsp 
-local lspconfig = require('lspconfig')
-lspconfig.clangd.setup({})
 -- TODO: add linter
 -- TODO: add formater
 -- TODO: look for trouple.nvim
