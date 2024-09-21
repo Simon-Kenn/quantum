@@ -10,7 +10,7 @@ wk.add({
 	{ "<leader>m", group = "Tabs"}
 })
 
-m('n', "<leader>cs", "<C-w>s", { desc = "Split window"})
+m('n', "<leader>ch", "<C-w>s", { desc = "Split window"})
 m('n', "<leader>cv", "<C-w>v", { desc = "Split window verticaly"})
 m('n', "<leader>cw", "<C-w>w", { desc = "Switch windows"})
 m('n', "<leader>cq", "<C-w>q", { desc = "Quit window"})
