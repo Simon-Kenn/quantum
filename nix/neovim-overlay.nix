@@ -27,6 +27,18 @@ with final.pkgs.lib; let
     rainbow-delimiters-nvim
 
     nvim-lspconfig
+    lspkind-nvim
+
+    # cmp
+
+    nvim-cmp
+    cmp-nvim-lsp
+    cmp-buffer
+    cmp-path
+    cmp-cmdline
+
+    luasnip
+    cmp_luasnip
 
     conform-nvim
 
@@ -36,13 +48,12 @@ with final.pkgs.lib; let
     toggleterm-nvim
     nvim-surround
 
-
-
     # -- ui --
     catppuccin-nvim
     nvim-web-devicons
     lualine-nvim
     tabby-nvim
+    todo-comments-nvim
 
     # -- git --
     diffview-nvim

@@ -2,7 +2,7 @@ require('modules.editor.telescope')
 require('modules.editor.treesitter')
 require('modules.editor.lsp')
 require('modules.editor.formatter')
-
+require('modules.editor.completion')
 -- TODO: look for flash.nvim
 
 require('toggleterm').setup()
