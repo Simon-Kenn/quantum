@@ -107,6 +107,7 @@ require('telescope').setup({
 }) 
 require('telescope').load_extension('fzf')
 -- TODO: add telescope tab extension
+-- TODO: add telescope undo extension
 
 -- TODO: look for flash.nvim
 
@@ -159,6 +160,8 @@ require("nvim-treesitter.configs").setup({
 require('treesitter-context').setup({})
 
 -- TODO: add lsp 
+local lspconfig = require('lspconfig')
+lspconfig.clangd.setup({})
 -- TODO: add linter
 -- TODO: add formater
 -- TODO: look for trouple.nvim

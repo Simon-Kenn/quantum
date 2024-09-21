@@ -20,11 +20,15 @@ with final.pkgs.lib; let
     # -- editor -- 
     telescope-nvim
     telescope-fzf-native-nvim
+
     nvim-treesitter.withAllGrammars
     nvim-treesitter-textobjects
     nvim-treesitter-context
     rainbow-delimiters-nvim
     nvim-surround
+
+    nvim-lspconfig
+
     auto-save-nvim
     nvim-autopairs
     auto-session
