@@ -1,5 +1,7 @@
 local cmp = require('cmp')
 local lspkind = {}
+-- TODO: Clean this file
+-- TODO: add other source (nerdfonts, etc…)
 
 lspkind.icons = {
   Class = '  ',
