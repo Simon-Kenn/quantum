@@ -27,7 +27,6 @@ with final.pkgs.lib; let
     rainbow-delimiters-nvim
 
     nvim-lspconfig
-    lspkind-nvim
     lazydev-nvim
 
     # cmp

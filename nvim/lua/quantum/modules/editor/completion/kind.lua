@@ -1,5 +1,7 @@
 local M = {}
 
+-- TODO: choice better icon
+
 M.icons = {
   Class = '  ',
   Color = '  ',
