@@ -4,8 +4,9 @@ function M.setup()
   require('quantum.modules.editor.telescope').setup {}
   require('quantum.modules.editor.treesitter').setup {}
   require('quantum.modules.editor.lsp').setup {}
-  require('quantum.modules.editor.formatter').setup {}
   require('quantum.modules.editor.completion').setup {}
+  require('quantum.modules.editor.luasnip').setup()
+  require('quantum.modules.editor.formatter').setup {}
   require('quantum.modules.editor.oil').setup {}
 
   require('toggleterm').setup()
@@ -26,7 +27,6 @@ function M.setup()
   -- TODO: add harpoon
   -- TODO: add luasnip
   -- TODO: add overseer
-  -- TODO: add twilight and focus mode
 
   -- FIX: todo-comments, git-signs, and lsp is not well displayed on status bar
 end
