@@ -1,11 +1,13 @@
 local M = {}
 local cmp = require('cmp')
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local ls = require('luasnip')
+local lspkind = require('lspkind')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local utils = require('quantum.modules.editor.completion.utils')
 local kind_icons = require('quantum.modules.editor.completion.kind').icons
 
 -- TODO: Clean this file
+--
 --
 
 function M.setup()
@@ -44,18 +46,19 @@ function M.setup()
       { name = 'path' },
       { name = 'buffer' },
     }),
-    formating = {
-      fields = { 'kind', 'abbr', 'menu' },
-      format = function(entry, vim_item) -- FIX: Icon not displaying properly
-        -- Kind icons
+    formatting = {
+      fields = { 'abbr', 'kind' },
+      format = function(entry, vim_item)
         vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
-        -- Source
         vim_item.menu = ({
           buffer = '[Buffer]',
           nvim_lsp = '[LSP]',
-          luasnip = '[LuaSnip]',
-          nvim_lua = '[Lua]',
-          latex_symbols = '[LaTeX]',
+          luasnip = '[Luasnip]',
+          path = '[Path]',
+          lazydev = '[Lazydev]',
+          fonts = '[Fonts]',
+          emoji = '[Emoji]',
+          nerdfont = '[Nerdfont]',
         })[entry.source.name]
         return vim_item
       end,
