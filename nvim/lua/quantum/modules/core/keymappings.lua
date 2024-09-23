@@ -73,7 +73,7 @@ function M.setup()
   map(noremap, 'È', 'gE', { desc = 'Prev end of Word' })
 
   map(noremap, 'gé', 'gt', { desc = 'Go to the next tab page' })
-  map(noremap, 'gb', 'gT', { desc = 'Go to the previous tab page' })
+  map(noremap, 'gp', 'gT', { desc = 'Go to the previous tab page' })
 
   map('o', 'aé', 'aw', { desc = 'word with ws' })
   map('o', 'aÉ', 'aW', { desc = 'WORD with ws' })
