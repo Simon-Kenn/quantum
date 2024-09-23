@@ -2,11 +2,14 @@ local M = {}
 local cmp = require('cmp')
 local kind_icons = {}
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local ls = require('luasnip')
 -- TODO: Clean this file
 -- TODO: add other source (nerdfonts, etc…)
 -- TODO: add mapping
 -- TODO function imp should add parenthesis
-
+--
+--
+--
 kind_icons.icons = {
   Class = '  ',
   Color = '  ',
@@ -41,39 +44,60 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
-local tab_complete = function(fallback)
+local confirm_selection = cmp.mapping(function(fallback)
+  if cmp.visible() then
+    if ls.expandable() then
+      ls.expand()
+    else
+      cmp.confirm {
+        select = true,
+      }
+    end
+  else
+    fallback()
+  end
+end)
+
+local next_item = cmp.mapping(function(fallback)
   if cmp.visible() then
     cmp.select_next_item()
+  elseif ls.locally_jumpable(1) then
+    ls.jump(1)
+  elseif has_words_before() then
+    cmp.complete()
   else
     fallback()
   end
-end
+end, { 'i', 's' })
 
-local s_tab_complete = function(fallback)
+local prev_item = cmp.mapping(function(fallback)
   if cmp.visible() then
-    cmp.select_prev_item()()
+    cmp.select_prev_item()
+  elseif ls.locally_jumpable(-1) then
+    ls.jump(-1) -- FIX: This don't work, need further investigation
   else
     fallback()
   end
-end
+end, { 'i', 's' })
 
 function M.setup()
   cmp.setup {
     snippet = {
       expand = function(args)
-        require('luasnip').lsp_expand(args.body)
+        ls.lsp_expand(args.body)
       end,
     },
     mapping = {
+      ['<CR>'] = confirm_selection,
+      ['<Tab>'] = next_item,
+      ['<S-Tab>'] = prev_item,
       ['<C-n>'] = cmp.mapping.select_next_item(),
       ['<C-p>'] = cmp.mapping.select_prev_item(),
-      ['<Tab>'] = tab_complete,
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
       ['<C-c>'] = cmp.mapping.abort(),
       ['<C-g>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm { select = false },
     },
     sources = cmp.config.sources({
       {
