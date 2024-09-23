@@ -3,13 +3,15 @@ local M = {}
 function M.setup()
   local core = require('quantum.modules.core')
   local editor = require('quantum.modules.editor')
-  local ui = require('quantum.modules.ui')
+  local ai = require('quantum.modules.ai')
   local git = require('quantum.modules.git')
+  local ui = require('quantum.modules.ui')
 
   core.setup()
-	editor.setup()
-	ui.setup()
-	git.setup()
+  editor.setup()
+  ai.setup()
+  git.setup()
+  ui.setup()
 end
 
 return M

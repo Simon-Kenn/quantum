@@ -16,6 +16,11 @@
       flake = false;
     };
 
+    avante-nvim = {
+      url = "github:yetone/avante.nvim";
+      flake = false;
+    };
+
   };
 
   outputs = inputs @ {

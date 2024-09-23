@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "avante-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1727089744,
+        "narHash": "sha256-FeFCzp4NkFwGspsNLSPkQ1Ti5aMoUtsCKjhId/EN2eA=",
+        "owner": "yetone",
+        "repo": "avante.nvim",
+        "rev": "5aec0ba48bb0342c116662aafb6fe58c1cf9d44a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yetone",
+        "repo": "avante.nvim",
+        "type": "github"
+      }
+    },
     "cmp-nerdfont": {
       "flake": false,
       "locked": {
@@ -229,6 +245,7 @@
     },
     "root": {
       "inputs": {
+        "avante-nvim": "avante-nvim",
         "cmp-nerdfont": "cmp-nerdfont",
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
