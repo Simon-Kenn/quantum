@@ -1,11 +1,15 @@
 local M = {}
-local ls = require('luasnip')
 
-function M.setup() end
+function M.setup()
+  require('luasnip').config.setup {
+    upddate_events = { 'TextChanged', 'TextChangedI' },
+    enable_autosnippets = true,
+    history = true,
+  }
 
-ls.config.set_config {
-  updateevents = 'TextChanged,TextChangedI',
-  enable
-}
+  require('luasnip.loaders.from_lua').lazy_load {
+    paths = { './snippets' }, -- FIX: not working
+  }
+end
 
 return M
