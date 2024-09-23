@@ -211,12 +211,29 @@
         "type": "github"
       }
     },
+    "nvim-cmp-font": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1665390618,
+        "narHash": "sha256-POZcP9ssbgQvMTfMbROx0krVa7ehucqTc45dSw+QQ4M=",
+        "owner": "amarakon",
+        "repo": "nvim-cmp-fonts",
+        "rev": "43be83eb24ff8aec124c3aae64d053a095e03bd0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "amarakon",
+        "repo": "nvim-cmp-fonts",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "cmp-nerdfont": "cmp-nerdfont",
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "nvim-cmp-font": "nvim-cmp-font"
       }
     },
     "systems": {

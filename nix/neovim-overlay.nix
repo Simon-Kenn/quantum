@@ -38,6 +38,7 @@ with final.pkgs.lib; let
     cmp-cmdline
     cmp-emoji
     (mkNvimPlugin inputs.cmp-nerdfont "cmp-nerdfont")
+    (mkNvimPlugin inputs.nvim-cmp-font "nvim-cmp-font")
 
     luasnip
     cmp_luasnip

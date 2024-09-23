@@ -103,8 +103,6 @@ function M.setup()
     }, {
       { name = 'path' },
       { name = 'buffer' },
-      { name = 'nerdfont' },
-      { name = 'emoji' },
     }),
     performance = {
       debounce = 100,
@@ -127,6 +125,19 @@ function M.setup()
       end,
     },
   }
+
+  cmp.setup.filetype('nix', {
+    sources = {
+      { name = "fonts", options = { space_filter = "-"} }
+    }
+  })
+
+  cmp.setup.filetype('norg', {
+    sources = {
+      { name = 'nerdfont' },
+      { name = 'emoji' },
+    }
+  })
 
   cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),

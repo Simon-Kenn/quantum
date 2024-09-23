@@ -10,6 +10,12 @@
       url = "github:chrisgrieser/cmp-nerdfont";
       flake = false;
     };
+
+    nvim-cmp-font = {
+      url = "github:amarakon/nvim-cmp-fonts";
+      flake = false;
+    };
+
   };
 
   outputs = inputs @ {
