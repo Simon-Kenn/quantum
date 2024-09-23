@@ -1,4 +1,2 @@
-require('core')
-require('modules.ui')
-require('modules.editor')
-require('modules.git')
+local quantum = require('quantum')
+quantum.setup()

@@ -1,8 +1,11 @@
-require('modules.editor.telescope')
-require('modules.editor.treesitter')
-require('modules.editor.lsp')
-require('modules.editor.formatter')
-require('modules.editor.completion')
+local M = {}
+
+function M.setup() 
+require('quantum.modules.editor.telescope')
+require('quantum.modules.editor.treesitter')
+require('quantum.modules.editor.lsp')
+require('quantum.modules.editor.formatter')
+require('quantum.modules.editor.completion')
 
 require('toggleterm').setup()
 require('todo-comments').setup {}
@@ -23,3 +26,6 @@ require('auto-session').setup {}
 -- TODO: add comment.nvim
 
 -- FIX: todo-comments, git-signs, and lsp is not well displayed on status bar
+end
+
+return M

@@ -1,6 +1,6 @@
 local lspconfig = require('lspconfig')
 local lazydev = require('lazydev')
-local on_attach = require('modules.editor.lsp.keymappings')
+local on_attach = require('quantum.modules.editor.lsp.keymappings')
 
 lspconfig.rust_analyser.setup { on_attach = on_attach }
 lspconfig.nil_ls.setup { on_attach = on_attach }

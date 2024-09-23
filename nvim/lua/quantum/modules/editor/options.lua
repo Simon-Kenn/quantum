@@ -1,3 +1,7 @@
+
+local M = {}
+
+function M.setup()
 local o = vim.opt
 
 o.splitbelow = true
@@ -32,3 +36,6 @@ o.ignorecase = true
 o.incsearch = true
 o.smartcase = true
 o.hlsearch = true
+end
+
+return M
