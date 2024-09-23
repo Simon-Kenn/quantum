@@ -1,6 +1,7 @@
 local M = {}
 local cmp = require('cmp')
 local kind_icons = {}
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 -- TODO: Clean this file
 -- TODO: add other source (nerdfonts, etc…)
 -- TODO: add mapping
@@ -33,6 +34,7 @@ kind_icons.icons = {
   Value = ' 󰎠 ',
   Variable = '  ',
 }
+
 local has_words_before = function()
   unpack = unpack or table.unpack
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -117,6 +119,8 @@ function M.setup()
     }),
     matching = { disallow_symbol_nonprefix_matching = false },
   })
+
+  cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 end
 
 return M
