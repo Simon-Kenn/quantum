@@ -5,11 +5,6 @@ local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local ls = require('luasnip')
 -- TODO: Clean this file
 -- TODO: add other source (nerdfonts, etc…)
--- TODO: add mapping
--- TODO function imp should add parenthesis
---
---
---
 kind_icons.icons = {
   Class = '  ',
   Color = '  ',
