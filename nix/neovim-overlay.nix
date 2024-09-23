@@ -31,12 +31,13 @@ with final.pkgs.lib; let
     lazydev-nvim
 
     # cmp
-
     nvim-cmp
     cmp-nvim-lsp
     cmp-buffer
     cmp-path
     cmp-cmdline
+    cmp-emoji
+    (mkNvimPlugin inputs.cmp-nerdfont "cmp-nerdfont")
 
     luasnip
     cmp_luasnip

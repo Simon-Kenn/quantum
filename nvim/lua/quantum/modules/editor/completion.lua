@@ -4,7 +4,6 @@ local kind_icons = {}
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local ls = require('luasnip')
 -- TODO: Clean this file
--- TODO: add other source (nerdfonts, etc…)
 kind_icons.icons = {
   Class = '  ',
   Color = '  ',
@@ -104,7 +103,14 @@ function M.setup()
     }, {
       { name = 'path' },
       { name = 'buffer' },
+      { name = 'nerdfont' },
+      { name = 'emoji' },
     }),
+    performance = {
+      debounce = 100,
+      throttle = 50,
+      fetching_timeout = 500,
+    },
     formating = {
       format = function(entry, vim_item) -- FIX: Icon not displaying properly
         -- Kind icons
