@@ -3,7 +3,6 @@ require('modules.editor.treesitter')
 require('modules.editor.lsp')
 require('modules.editor.formatter')
 require('modules.editor.completion')
--- TODO: look for flash.nvim
 
 require('toggleterm').setup()
 require('todo-comments').setup {}
@@ -14,5 +13,13 @@ require('nvim-autopairs').setup {}
 require('auto-save').setup {}
 require('auto-session').setup {}
 
--- TODO: add linter
--- TODO: look for trouple.nvim
+-- TODO: add trouble.nvim
+-- TODO: add flash.nvim
+-- TODO: add harpoon
+-- TODO: add oil
+-- TODO: add luasnip
+-- TODO: add overseer
+-- TODO: add twilight and focus mode
+-- TODO: add comment.nvim
+
+-- FIX: todo-comments, git-signs, and lsp is not well displayed on status bar

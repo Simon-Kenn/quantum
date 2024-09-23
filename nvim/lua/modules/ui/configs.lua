@@ -1,47 +1,47 @@
 require('modules.ui.theme')
 
-require('nvim-web-devicons').setup({})
+require('nvim-web-devicons').setup {}
 
-require('lualine').setup({
-	options = {
-		icons_enabled = true,
-		theme = 'catppuccin',
-		component_separators = { left = '', right = ''},
-		section_separators = { left = '', right = ''},
-		disabled_filetypes = {
-			statusline = {},
-			winbar = {},
-		},
-		ignore_focus = {},
-		always_divide_middle = true,
-		globalstatus = false,
-		refresh = {
-			statusline = 1000,
-			tabline = 1000,
-			winbar = 1000,
-		}
-	},
-	sections = {
-		lualine_a = {'mode'},
-		lualine_b = {'branch', 'diff', 'diagnostics'},
-		lualine_c = {'filename'},
-		lualine_x = {'encoding', 'fileformat', 'filetype'},
-		lualine_y = {'progress'},
-		lualine_z = {'location'}
-	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = {'filename'},
-		lualine_x = {'location'},
-		lualine_y = {},
-		lualine_z = {}
-	},
-	tabline = {},
-	winbar = {},
-	inactive_winbar = {},
-	extensions = {}
-})
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'catppuccin',
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+    },
+  },
+  sections = {
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diff', 'diagnostics' },
+    lualine_c = { 'filename' },
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' },
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = { 'filename' },
+    lualine_x = { 'location' },
+    lualine_y = {},
+    lualine_z = {},
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {},
+}
 
 -- TODO: add command for moovinge and renaming ta
 local theme = {
@@ -53,7 +53,7 @@ local theme = {
   win = 'TabLine',
   tail = 'TabLine',
 }
-require('tabby').setup({
+require('tabby').setup {
   line = function(line)
     return {
       {
@@ -92,4 +92,10 @@ require('tabby').setup({
     }
   end,
   -- option = {}, -- setup modules' option,
-})
+}
+
+-- TODO: add fidget
+-- TODO: add notification
+-- TODO: add tree-navigation
+-- TODO: add oil
+-- TODO: add welcome screen

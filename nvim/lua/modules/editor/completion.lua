@@ -2,7 +2,8 @@ local cmp = require('cmp')
 local kind_icons = {}
 -- TODO: Clean this file
 -- TODO: add other source (nerdfonts, etc…)
--- TODO add snipet
+-- TODO: add mapping
+-- TODO function imp should add parenthesis
 
 kind_icons.icons = {
   Class = '  ',
