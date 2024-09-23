@@ -50,6 +50,7 @@ with final.pkgs.lib; let
     nvim-surround
 
     oil-nvim
+    comment-nvim
 
     # -- ui --
     catppuccin-nvim
