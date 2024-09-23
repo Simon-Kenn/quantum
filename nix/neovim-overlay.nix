@@ -18,6 +18,7 @@ with final.pkgs.lib; let
     plenary-nvim
 
     # -- editor -- 
+    # TODO: order this
     telescope-nvim
     telescope-fzf-native-nvim
 
@@ -28,6 +29,7 @@ with final.pkgs.lib; let
 
     nvim-lspconfig
     lazydev-nvim
+    trouble-nvim
 
     # cmp
     nvim-cmp
@@ -41,6 +43,8 @@ with final.pkgs.lib; let
 
     luasnip
     cmp_luasnip
+
+    flash-nvim
 
     conform-nvim
 

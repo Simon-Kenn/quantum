@@ -26,9 +26,10 @@ function M.setup()
   require('zen-mode').setup()
   require('twilight').setup()
 
-  -- TODO: add trouble.nvim
-  -- TODO: add flash.nvim
-  -- TODO: add overseer
+  -- NOTE: make usage of it
+  -- require('flash').setup()
+  -- require('trouble').setup {}
+  -- require('overseer').setup {}
 end
 
 return M
