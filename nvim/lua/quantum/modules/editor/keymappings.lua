@@ -9,7 +9,21 @@ function M.setup()
     { '<leader>f', group = 'Telescope' },
     { '<leader>i', group = 'Incremental selection' },
     { '<leader>x', group = 'Terminal' },
+    { '<leader>h', group = 'harpoon' },
   }
+
+  map('n', '<leader>b', ":lua require('harpoon.mark').add_file()<cr>", { desc = 'Harpoon this!' })
+
+  map('n', '<leader>"', ":lua require('harpoon.ui').nav_file(1)<cr>", { desc = 'Go to harp 1' })
+  map('n', '<leader>«', ":lua require('harpoon.ui').nav_file(2)<cr>", { desc = 'Go to harp 2' })
+  map('n', '<leader>»', ":lua require('harpoon.ui').nav_file(3)<cr>", { desc = 'Go to harp 3' })
+  map('n', '<leader>', ":lua require('harpoon.ui').nav_file(4)<cr>", { desc = 'Go to harp 4' })
+  map('n', '<leader>)', ":lua require('harpoon.ui').nav_file(5)<cr>", { desc = 'Go to harp 5' })
+  map('n', '<leader>@', ":lua require('harpoon.ui').nav_file(6)<cr>", { desc = 'Go to harp 6' })
+
+  map('n', '<leader>é', ":lua require('harpoon.ui').nav_prev()<cr>", { desc = 'prev' })
+  map('n', '<leader>p', ":lua require('harpoon.ui').nav_next()<cr>", { desc = 'harpoon' })
+  map('n', '<leader>fh', ':Telescope harpoon marks<cr>', { desc = 'Harpoons' })
 
   map('n', '<leader>o', '<Cmd>Oil<cr>', { desc = 'Oil' })
   map('n', 'w', '<Cmd>ZenMode<cr>', { desc = 'Oil' })

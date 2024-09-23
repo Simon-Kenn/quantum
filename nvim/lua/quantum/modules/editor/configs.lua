@@ -9,6 +9,10 @@ function M.setup()
   require('quantum.modules.editor.formatter').setup {}
   require('quantum.modules.editor.oil').setup {}
 
+  require('harpoon').setup {
+    tabline = true,
+  }
+
   require('toggleterm').setup()
   require('todo-comments').setup {}
 
@@ -24,11 +28,7 @@ function M.setup()
 
   -- TODO: add trouble.nvim
   -- TODO: add flash.nvim
-  -- TODO: add harpoon
-  -- TODO: add luasnip
   -- TODO: add overseer
-
-  -- FIX: todo-comments, git-signs, and lsp is not well displayed on status bar
 end
 
 return M

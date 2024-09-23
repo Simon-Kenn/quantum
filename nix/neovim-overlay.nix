@@ -50,6 +50,8 @@ with final.pkgs.lib; let
     toggleterm-nvim
     nvim-surround
 
+    harpoon
+
     oil-nvim
     todo-comments-nvim
     comment-nvim

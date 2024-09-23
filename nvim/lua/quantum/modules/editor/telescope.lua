@@ -110,8 +110,10 @@ function M.setup()
     },
   }
   require('telescope').load_extension('fzf')
+  require('telescope').load_extension('harpoon')
   -- TODO: add telescope tab extension
   -- TODO: add telescope undo extension
+  -- TODO: add telescope marks
 end
 
 return M
