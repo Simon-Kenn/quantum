@@ -16,11 +16,6 @@ local function on_attach(client, bufnr)
   buf_set_keymap('n', 'R', vim.lsp.buf.hover, 'Documentation', opts)
   buf_set_keymap('n', 'gn', vim.lsp.buf.rename, 'Rename', opts)
   buf_set_keymap('n', 'g.', vim.lsp.buf.code_action, 'Code action', opts)
-
-  --buf_set_keymap('n', '<leader>e', vim.diagnostic.open_float, "Afficher les diagnostics", opts)
-  --buf_set_keymap('n', '[d', vim.diagnostic.goto_prev, "Diagnostic précédent", opts)
-  --buf_set_keymap('n', ']d', vim.diagnostic.goto_next, "Diagnostic suivant", opts)
-  --buf_set_keymap('n', '<leader>q', vim.diagnostic.setloclist, "Ouvrir la liste des diagnostics", opts)
 end
 
 return on_attach

@@ -1,3 +1,4 @@
+local M = {}
 local cmp = require('cmp')
 local kind_icons = {}
 -- TODO: Clean this file
@@ -54,64 +55,68 @@ local s_tab_complete = function(fallback)
   end
 end
 
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-  mapping = {
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<Tab>'] = tab_complete,
-    ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-    ['<C-c>'] = cmp.mapping.abort(),
-    ['<C-g>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm { select = false },
-  },
-  sources = cmp.config.sources({
-    {
-      name = 'lazydev',
-      group_index = 0,
+function M.setup()
+  cmp.setup {
+    snippet = {
+      expand = function(args)
+        require('luasnip').lsp_expand(args.body)
+      end,
     },
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  }, {
-    { name = 'path' },
-    { name = 'buffer' },
-  }),
-  formating = {
-    format = function(entry, vim_item) -- FIX: Icon not displaying properly
-      -- Kind icons
-      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
-      -- Source
-      vim_item.menu = ({
-        buffer = '[Buffer]',
-        nvim_lsp = '[LSP]',
-        luasnip = '[LuaSnip]',
-        nvim_lua = '[Lua]',
-        latex_symbols = '[LaTeX]',
-      })[entry.source.name]
-      return vim_item
-    end,
-  },
-}
+    mapping = {
+      ['<C-n>'] = cmp.mapping.select_next_item(),
+      ['<C-p>'] = cmp.mapping.select_prev_item(),
+      ['<Tab>'] = tab_complete,
+      ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+      ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+      ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+      ['<C-c>'] = cmp.mapping.abort(),
+      ['<C-g>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm { select = false },
+    },
+    sources = cmp.config.sources({
+      {
+        name = 'lazydev',
+        group_index = 0,
+      },
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' },
+    }, {
+      { name = 'path' },
+      { name = 'buffer' },
+    }),
+    formating = {
+      format = function(entry, vim_item) -- FIX: Icon not displaying properly
+        -- Kind icons
+        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
+        -- Source
+        vim_item.menu = ({
+          buffer = '[Buffer]',
+          nvim_lsp = '[LSP]',
+          luasnip = '[LuaSnip]',
+          nvim_lua = '[Lua]',
+          latex_symbols = '[LaTeX]',
+        })[entry.source.name]
+        return vim_item
+      end,
+    },
+  }
 
-cmp.setup.cmdline({ '/', '?' }, {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' },
-  },
-})
+  cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' },
+    },
+  })
 
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' },
-  }, {
-    { name = 'cmdline' },
-  }),
-  matching = { disallow_symbol_nonprefix_matching = false },
-})
+  cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' },
+    }, {
+      { name = 'cmdline' },
+    }),
+    matching = { disallow_symbol_nonprefix_matching = false },
+  })
+end
+
+return M
