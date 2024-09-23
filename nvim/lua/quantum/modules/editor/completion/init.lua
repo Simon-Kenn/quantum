@@ -1,78 +1,12 @@
 local M = {}
 local cmp = require('cmp')
-local kind_icons = {}
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local ls = require('luasnip')
+local utils = require('quantum.modules.editor.completion.utils')
+local kind_icons = require('quantum.modules.editor.completion.kind').icons
+
 -- TODO: Clean this file
-kind_icons.icons = {
-  Class = '  ',
-  Color = '  ',
-  Constant = '  ',
-  Constructor = '  ',
-  Enum = ' 了',
-  EnumMember = '  ',
-  Event = '  ',
-  Field = ' 󰜢 ',
-  File = '  ',
-  Folder = '  ',
-  Function = '  ',
-  Interface = '  ',
-  Keyword = '  ',
-  Method = ' ƒ ',
-  Module = '  ',
-  Operator = ' 󰆕 ',
-  Property = '  ',
-  Reference = '  ',
-  Snippet = '  ',
-  Struct = '  ',
-  Text = '  ',
-  TypeParameter = '',
-  Unit = ' 󰑭 ',
-  Value = ' 󰎠 ',
-  Variable = '  ',
-}
-
-local has_words_before = function()
-  unpack = unpack or table.unpack
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
-end
-
-local confirm_selection = cmp.mapping(function(fallback)
-  if cmp.visible() then
-    if ls.expandable() then
-      ls.expand()
-    else
-      cmp.confirm {
-        select = true,
-      }
-    end
-  else
-    fallback()
-  end
-end)
-
-local next_item = cmp.mapping(function(fallback)
-  if cmp.visible() then
-    cmp.select_next_item()
-  elseif ls.locally_jumpable(1) then
-    ls.jump(1)
-  elseif has_words_before() then
-    cmp.complete()
-  else
-    fallback()
-  end
-end, { 'i', 's' })
-
-local prev_item = cmp.mapping(function(fallback)
-  if cmp.visible() then
-    cmp.select_prev_item()
-  elseif ls.locally_jumpable(-1) then
-    ls.jump(-1) -- FIX: This don't work, need further investigation
-  else
-    fallback()
-  end
-end, { 'i', 's' })
+--
 
 function M.setup()
   cmp.setup {
@@ -82,9 +16,15 @@ function M.setup()
       end,
     },
     mapping = {
-      ['<CR>'] = confirm_selection,
-      ['<Tab>'] = next_item,
-      ['<S-Tab>'] = prev_item,
+      ['<CR>'] = cmp.mapping(function(fallback)
+        utils.confirm_selection(fallback, ls, cmp)
+      end),
+      ['<Tab>'] = cmp.mapping(function(fallback)
+        utils.next_item(fallback, ls, cmp)
+      end, { 'i', 's' }),
+      ['<S-Tab>'] = cmp.mapping(function(fallback)
+        utils.prev_item(fallback, ls, cmp)
+      end, { 'i', 's' }),
       ['<C-n>'] = cmp.mapping.select_next_item(),
       ['<C-p>'] = cmp.mapping.select_prev_item(),
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -104,12 +44,8 @@ function M.setup()
       { name = 'path' },
       { name = 'buffer' },
     }),
-    performance = {
-      debounce = 100,
-      throttle = 50,
-      fetching_timeout = 500,
-    },
     formating = {
+      fields = { 'kind', 'abbr', 'menu' },
       format = function(entry, vim_item) -- FIX: Icon not displaying properly
         -- Kind icons
         vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
