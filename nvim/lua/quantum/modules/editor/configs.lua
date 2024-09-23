@@ -6,6 +6,7 @@ function M.setup()
   require('quantum.modules.editor.lsp').setup {}
   require('quantum.modules.editor.formatter').setup {}
   require('quantum.modules.editor.completion').setup {}
+  require('quantum.modules.editor.oil').setup {}
 
   require('toggleterm').setup()
   require('todo-comments').setup {}

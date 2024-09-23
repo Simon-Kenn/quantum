@@ -49,6 +49,8 @@ with final.pkgs.lib; let
     toggleterm-nvim
     nvim-surround
 
+    oil-nvim
+
     # -- ui --
     catppuccin-nvim
     nvim-web-devicons
