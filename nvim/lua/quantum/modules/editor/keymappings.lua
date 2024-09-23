@@ -12,6 +12,7 @@ function M.setup()
   }
 
   map('n', '<leader>o', '<Cmd>Oil<cr>', { desc = 'Oil' })
+  map('n', 'w', '<Cmd>ZenMode<cr>', { desc = 'Oil' })
 
   map('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
   map('n', '<leader>fg', builtin.live_grep, { desc = 'Grep' })

@@ -9,6 +9,7 @@ function M.setup()
   -- TODO: add tree-navigation
   -- TODO: add oil
   -- TODO: add welcome screen
+  -- TODO check for focus-nvim
 end
 
 return M

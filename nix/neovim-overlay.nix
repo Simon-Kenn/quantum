@@ -50,14 +50,16 @@ with final.pkgs.lib; let
     nvim-surround
 
     oil-nvim
+    todo-comments-nvim
     comment-nvim
+    twilight-nvim
+    zen-mode-nvim
 
     # -- ui --
     catppuccin-nvim
     nvim-web-devicons
     lualine-nvim
     tabby-nvim
-    todo-comments-nvim
 
     # -- git --
     diffview-nvim

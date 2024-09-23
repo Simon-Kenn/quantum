@@ -18,6 +18,8 @@ function M.setup()
   require('auto-session').setup {}
 
   require('Comment').setup()
+  require('zen-mode').setup()
+  require('twilight').setup()
 
   -- TODO: add trouble.nvim
   -- TODO: add flash.nvim
