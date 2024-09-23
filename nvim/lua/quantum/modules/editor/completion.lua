@@ -128,15 +128,15 @@ function M.setup()
 
   cmp.setup.filetype('nix', {
     sources = {
-      { name = "fonts", options = { space_filter = "-"} }
-    }
+      { name = 'fonts', options = { space_filter = '-' } },
+    },
   })
 
   cmp.setup.filetype('norg', {
     sources = {
       { name = 'nerdfont' },
       { name = 'emoji' },
-    }
+    },
   })
 
   cmp.setup.cmdline({ '/', '?' }, {
