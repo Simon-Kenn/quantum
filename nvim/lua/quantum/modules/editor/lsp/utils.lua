@@ -1,3 +1,6 @@
+local M = {}
+local mappings = require("quantum.modules.editor.keymappings").on_attach
+
 local function lsp_highlight_document(client, bufnr)
   if client.server_capabilities.documentHighlightProvider then
     local augroup =
@@ -29,4 +32,9 @@ local function lsp_highlight_document(client, bufnr)
   end
 end
 
-return lsp_highlight_document
+function M.on_attach(client, bufnr)
+  mappings(bufnr)
+  lsp_highlight_document(client, bufnr)
+end
+
+return M
