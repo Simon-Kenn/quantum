@@ -11,7 +11,6 @@ function M.setup()
 	options.setup()
 	keymappings.setup()
 
-
 end
 
 return M
