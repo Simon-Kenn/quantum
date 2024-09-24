@@ -70,6 +70,7 @@ with final.pkgs.lib; let
     fidget-nvim
     nvim-notify
     dashboard-nvim
+    statuscol-nvim
 
     # -- git --
     diffview-nvim
