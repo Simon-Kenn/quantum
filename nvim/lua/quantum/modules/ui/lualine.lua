@@ -5,8 +5,8 @@ function M.setup()
     options = {
       icons_enabled = true,
       theme = 'catppuccin',
-      component_separators = { left = '', right = '' },
-      section_separators = { left = '', right = '' },
+      component_separators = { left = '', right = '' },
+      section_separators = { left = '', right = '' },
       disabled_filetypes = {
         statusline = {},
         winbar = {},
@@ -22,35 +22,12 @@ function M.setup()
     },
     sections = {
       lualine_a = { 'mode' },
-      lualine_b = { 'branch', 'diff', 'diagnostics' },
-      lualine_c = { 'filename' },
-      lualine_x = { 'encoding', 'fileformat', 'filetype' },
+      lualine_b = { 'branch' },
+      lualine_c = { 'diff', 'diagnostics' },
+      lualine_x = { 'lsp', 'treesitter', 'spaces', 'filesize' }, -- FIX: Treesitter / LSP / space
       lualine_y = { 'progress' },
       lualine_z = { 'location' },
     },
-    inactive_sections = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = { 'filename' },
-      lualine_x = { 'location' },
-      lualine_y = {},
-      lualine_z = {},
-    },
-    tabline = {},
-    winbar = {},
-    inactive_winbar = {},
-    extensions = {},
-  }
-
-  -- TODO: add command for moovinge and renaming ta
-  local theme = {
-    fill = 'TabLineFill',
-    -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
-    head = 'TabLine',
-    current_tab = 'TabLineSel',
-    tab = 'TabLine',
-    win = 'TabLine',
-    tail = 'TabLine',
   }
 end
 
