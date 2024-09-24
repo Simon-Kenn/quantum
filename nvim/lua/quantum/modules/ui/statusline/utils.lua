@@ -1,4 +1,6 @@
 local palette = require('quantum.modules.ui.utils').palette
+local icons = require('quantum.modules.ui.utils').icons
+local fn, api = vim.fn, vim.api
 
 local M = {}
 M.conditions = {
@@ -33,6 +35,123 @@ M.components = {
     separator = {
       right = '',
     },
+  },
+  filetype = {
+    'filetype',
+    icon_only = true,
+  },
+
+  filename = {
+    'filename',
+    file_status = false,
+    color = { fg = palette.lavender },
+  },
+
+  filesize = {
+    'filesize',
+    icon = '󰙴',
+    color = { fg = palette.lavender },
+    padding = { left = 1, right = 1 },
+    cond = M.conditions.buffer_not_empty and M.conditions.hide_in_width,
+  },
+
+  diagnostics = {
+    'diagnostics',
+    sources = { 'nvim_diagnostic' },
+    sections = { 'error', 'warn', 'info', 'hint' },
+    symbols = icons.diagnostics,
+    cond = M.conditions.hide_in_width,
+  },
+
+  diff = {
+    'diff',
+    source = function()
+      ---@diagnostic disable-next-line: undefined-field
+      local gitsigns = vim.b.gitsigns_status_dict
+      if gitsigns then
+        return {
+          added = gitsigns.added,
+          modified = gitsigns.changed,
+          removed = gitsigns.removed,
+        }
+      end
+    end,
+    symbols = {
+      added = ' ',
+      modified = ' ',
+      removed = ' ',
+    },
+    cond = M.conditions.hide_in_width,
+  },
+
+  treesitter = {
+    function()
+      return ''
+    end,
+    color = function()
+      local buf = api.nvim_get_current_buf()
+      local ts = vim.treesitter.highlighter.active[buf]
+      return {
+        fg = ts and not vim.tbl_isempty(ts) and palette.green or palette.red,
+      }
+    end,
+    cond = M.conditions.hide_in_width,
+  },
+
+  location = {
+    function()
+      local line = fn.line('.')
+      local lines = fn.line('$')
+      local col = fn.virtcol('.')
+      -- return string.format("%3d/%d:%-2d", line, lines, col)
+      return string.format('%d/%d:%d', line, lines, col)
+    end,
+    icon = { '', color = { fg = palette.pink, gui = 'bold' } },
+    separator = { left = '' },
+    color = { gui = 'bold' },
+  },
+
+  lsp = {
+    function()
+      local clients = {}
+      local buf_clients = vim.lsp.get_clients { bufnr = 0 }
+      for _, client in pairs(buf_clients) do
+        table.insert(clients, client.name)
+      end
+
+      return string.format('LSP(s):[%s]', table.concat(clients, ' • '))
+    end,
+    icon = '',
+    color = { fg = palette.mauve },
+    cond = M.conditions.hide_in_width and M.conditions.has_lsp_clients,
+  },
+
+  scrollbar = {
+    function()
+      local current_line = fn.line('.')
+      local total_lines = fn.line('$')
+      local chars = { '██', '▇▇', '▆▆', '▅▅', '▄▄', '▃▃', '▂▂', '▁▁', '  ' }
+      local line_ratio = current_line / total_lines
+      local index = math.ceil(line_ratio * #chars)
+      return chars[index]
+    end,
+    color = { fg = palette.surface0 },
+  },
+
+  spaces = {
+    function()
+      if not api.nvim_get_option_value('expandtab', { buf = 0 }) then
+        return 'Tab:' .. api.nvim_get_option_value('tabstop', { buf = 0 })
+      end
+      local size = api.nvim_get_option_value('shiftwidth', { buf = 0 })
+      if size == 0 then
+        size = api.nvim_get_option_value('tabstop', { buf = 0 })
+      end
+      return 'Spaces:' .. size
+    end,
+    padding = { left = 1, right = 1 },
+    cond = M.conditions.hide_in_width,
+    color = { fg = palette.sapphire },
   },
 }
 return M

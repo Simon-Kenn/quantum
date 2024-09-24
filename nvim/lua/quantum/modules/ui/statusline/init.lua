@@ -24,10 +24,14 @@ function M.setup()
     sections = {
       lualine_a = { components.mode },
       lualine_b = { components.branch },
-      --lualine_c = { 'diff', 'diagnostics' },
-      --lualine_x = { 'lsp', 'treesitter', 'spaces', 'filesize' }, -- FIX: Treesitter / LSP / space
-      --lualine_y = { 'progress' },
-      --lualine_z = { 'location' },
+      lualine_c = { components.diff, components.diagnostic, components.filename },
+      lualine_x = {
+        components.lsp,
+        components.treesitter,
+        components.filesize,
+      },
+      lualine_y = { components.location },
+      lualine_z = { components.scrollbar, components.clock },
     },
     --inactive_section = {
     --  lualine_b = {},
