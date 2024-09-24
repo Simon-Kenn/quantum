@@ -2,14 +2,15 @@ local M = {}
 
 function M.setup()
   require('nvim-web-devicons').setup {}
-  require('quantum.modules.ui.lualine').setup {}
+  require('quantum.modules.ui.statusline').setup {}
   require('quantum.modules.ui.tabline').setup {}
-  -- TODO: add fidget
-  -- TODO: add notification
+  require('fidget').setup {}
+  -- TODO: Pump it
+  -- require('notify').setup {}
+  -- require('alpha').setup {}
   -- TODO: add tree-navigation
-  -- TODO: add oil
   -- TODO: add welcome screen
-  -- TODO check for focus-nvim
+  require('dashboard').setup()
 end
 
 return M
