@@ -30,7 +30,14 @@ function M.setup()
 
   map("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
   map("n", "<leader>fg", builtin.live_grep, { desc = "Grep" })
-  map("n", "<leader>fb", builtin.buffers, { desc = "Buffers" })
+  map("n", "<leader>fw", builtin.grep_string, { desc = "Find word" })
+  map(
+    "n",
+    "<leader>fb",
+    "<Cmd>Telescope buffers sort_mru=true sort_lastused=true<CR>",
+    { desc = "Buffers" }
+  )
+  map("n", "<leader>fd", builtin.diagnostics, { desc = "List diagnostics" })
   map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "TODO" })
 
   map("n", "<leader>xt", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
