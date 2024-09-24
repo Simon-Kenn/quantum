@@ -6,7 +6,7 @@ function M.setup()
     integrations = {
       cmp = true,
       which_key = true,
-      telescope = true,
+      telescope = { style = 'nvchad' },
       treesitter = true,
       treesitter_context = true,
       rainbow_delimiters = true,
@@ -31,10 +31,14 @@ function M.setup()
           background = true,
         },
       },
-
+      harpoon = true,
       diffview = true,
       neogit = true,
       gitsigns = true,
+      alpha = true,
+      notify = true,
+      fidget = true,
+      fzf = true,
     },
   }
 
