@@ -12,6 +12,16 @@ function M.setup()
         ls.lsp_expand(args.body)
       end,
     },
+    window = {
+      completion = {
+        border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
+        winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None',
+      },
+      documentation = {
+        border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
+        winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel,Search:None',
+      },
+    },
     mapping = {
       ['<CR>'] = cmp.mapping(function(fallback)
         utils.confirm_selection(fallback, ls, cmp)
@@ -42,7 +52,7 @@ function M.setup()
       { name = 'buffer' },
     }),
     formatting = {
-      fields = { 'abbr', 'kind' },
+      fields = { 'menu', 'abbr', 'kind' },
       format = function(entry, vim_item)
         vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
         vim_item.menu = ({
