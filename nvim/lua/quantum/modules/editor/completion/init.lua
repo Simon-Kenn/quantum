@@ -3,7 +3,7 @@ local cmp = require('cmp')
 local ls = require('luasnip')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local utils = require('quantum.modules.editor.completion.utils')
-local kind_icons = require('quantum.modules.editor.completion.kind').icons
+local kind_icons = require('quantum.modules.ui.utils').icons.kinds
 
 function M.setup()
   cmp.setup {
