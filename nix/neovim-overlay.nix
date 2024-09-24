@@ -67,6 +67,9 @@ with final.pkgs.lib; let
     nvim-web-devicons
     lualine-nvim
     tabby-nvim
+    fidget-nvim
+    nvim-notify
+    dashboard-nvim
 
     # -- git --
     diffview-nvim
