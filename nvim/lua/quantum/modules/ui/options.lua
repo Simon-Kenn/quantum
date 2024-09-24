@@ -7,14 +7,14 @@ function M.setup()
 
   opt.number = true
   opt.relativenumber = true
-  opt.foldlevel = 100
   opt.cursorline = true
+  opt.cursorlineopt = 'number,line'
   opt.conceallevel = 3
 
   opt.virtualedit = 'block'
   opt.inccommand = 'split'
-  opt.laststatus = 3
-  opt.signcolumn = 'auto:4'
+  opt.laststatus = 2
+  opt.signcolumn = 'yes'
 end
 
 return M
