@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
+    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
     cmp-nerdfont = {
       url = "github:chrisgrieser/cmp-nerdfont";
@@ -44,6 +45,7 @@
         inherit system;
         overlays = [
           neovim-overlay
+          inputs.neorg-overlay.overlays.default
           gen-luarc.overlays.default
         ];
       };

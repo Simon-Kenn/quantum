@@ -78,6 +78,10 @@ with final.pkgs.lib; let
     gitsigns-nvim
     neogit
 
+    # -- Notes --
+    neorg
+    neorg-telescope
+
   ];
 
   extraPackages = with pkgs; [
