@@ -107,6 +107,23 @@ function M.setup()
       -- TODO: enhence configuration, read the :h Telescope
       -- TODO: Mappings should be a function in keymappings.lua that we import here
       mappings = mappings,
+      prompt_prefix = '   ',
+      selection_caret = '  ',
+      layout_strategy = 'horizontal',
+      sorting_strategy = 'ascending',
+      layout_config = {
+        preview_cutoff = 90,
+        prompt_position = 'top',
+        width = 0.85,
+        height = 0.9,
+        horizontal = {
+          preview_width = 0.55,
+          results_width = 0.8,
+        },
+        vertical = {
+          mirror = false,
+        },
+      },
     },
   }
   require('telescope').load_extension('fzf')
