@@ -27,6 +27,7 @@ function M.setup()
   require("zen-mode").setup()
   require("twilight").setup()
 
+  -- TODO: add undotree
   -- NOTE: make usage of it
   -- require('flash').setup()
   -- require('trouble').setup {}

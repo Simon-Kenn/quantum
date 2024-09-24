@@ -71,6 +71,7 @@ with final.pkgs.lib; let
     nvim-notify
     dashboard-nvim
     statuscol-nvim
+    neo-tree-nvim
 
     # -- git --
     diffview-nvim

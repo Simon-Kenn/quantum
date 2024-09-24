@@ -39,6 +39,7 @@ function M.setup()
       notify = true,
       fidget = true,
       fzf = true,
+      neotree = true,
     },
   }
 
