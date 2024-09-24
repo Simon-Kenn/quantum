@@ -6,10 +6,10 @@ M.border = "none"
 
 M.icons = {
   diagnostics = {
-    error = " ",
-    warn = " ",
-    info = " ",
-    hint = " ",
+    ERROR = " ",
+    WARN = " ",
+    INFO = " ",
+    HINT = " ",
   },
   kinds = {
     Array = " ",
