@@ -84,9 +84,8 @@ function M.setup()
         ["cf"] = "copy_filename",
         ["cp"] = "copy_path",
 
-        -- TODO: to unify with bépo
-        ["[b"] = "prev_source",
-        ["]b"] = "next_source",
+        ["êb"] = "prev_source",
+        ["àb"] = "next_source",
 
         ["z"] = "close_all_nodes",
         ["Z"] = "expand_all_nodes",

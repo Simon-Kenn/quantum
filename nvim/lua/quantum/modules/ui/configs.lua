@@ -8,10 +8,7 @@ function M.setup()
   require("quantum.modules.ui.startup").setup({})
   require("quantum.modules.ui.tree").setup({})
   require("fidget").setup({})
-  -- TODO: Pump it
   -- require('notify').setup {}
-  -- TODO: add tree-navigation
-  -- TODO: add welcome screen
 end
 
 return M
