@@ -28,6 +28,8 @@ function M.setup()
   require("twilight").setup()
 
   -- TODO: add undotree
+  -- TODO: add test functionallity
+  --
   -- NOTE: make usage of it
   -- require('flash').setup()
   -- require('trouble').setup {}
