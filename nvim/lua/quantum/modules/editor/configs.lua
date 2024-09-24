@@ -20,7 +20,9 @@ function M.setup()
 
   require('nvim-autopairs').setup {}
   require('auto-save').setup {}
-  require('auto-session').setup {}
+  require('auto-session').setup {
+    bypass_save_filetypes = { 'dashboard' },
+  }
 
   require('Comment').setup()
   require('zen-mode').setup()
