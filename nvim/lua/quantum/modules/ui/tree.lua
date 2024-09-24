@@ -1,5 +1,6 @@
 local M = {}
 local events = require("neo-tree.events")
+local border = require("quantum.modules.ui.utils").border
 
 function M.setup()
   require("neo-tree").setup({
@@ -16,7 +17,7 @@ function M.setup()
     },
     close_if_last_window = true,
     use_default_mappings = false,
-    popup_border_style = "rounded",
+    popup_border_style = border,
     event_handlers = {
       {
         event = events.FILE_OPENED,

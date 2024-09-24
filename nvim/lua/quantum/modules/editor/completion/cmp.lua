@@ -1,9 +1,10 @@
 local M = {}
 local ls, cmp = require("luasnip"), require("cmp")
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-local utils, icons =
+local utils, icons, border =
   require("quantum.modules.editor.completion.utils"),
-  require("quantum.modules.ui.utils").icons.kinds
+  require("quantum.modules.ui.utils").icons.kinds,
+  require("quantum.modules.ui.utils").border
 
 function M.setup()
   cmp.setup({
@@ -14,11 +15,11 @@ function M.setup()
     },
     window = {
       completion = {
-        border = "rounded",
+        border = border,
         winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
       },
       documentation = {
-        border = "rounded",
+        border = border,
         winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
       },
     },
