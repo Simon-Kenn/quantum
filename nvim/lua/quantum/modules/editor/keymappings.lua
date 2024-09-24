@@ -53,7 +53,7 @@ function M.setup()
   map("t", "<leader>n", "<c-\\><c-n><c-w>n", { desc = "" })
 end
 
-function M.on_attach(client, bufnr)
+function M.on_attach(bufnr)
   local function buf_set_keymap(mode, lhs, rhs, desc, opts)
     opts = opts or {}
     opts.buffer = bufnr

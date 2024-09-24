@@ -8,14 +8,14 @@ local M = {}
 function M.setup()
   lspconfig.rust_analyser.setup({
     on_attach = function(client, bufnr)
-      mappings.on_attach(client, bufnr)
+      mappings.on_attach(bufnr)
       lsp_highlight_document(client, bufnr)
     end,
   })
 
   lspconfig.nil_ls.setup({
     on_attach = function(client, bufnr)
-      mappings.on_attach(client, bufnr)
+      mappings.on_attach(bufnr)
       lsp_highlight_document(client, bufnr)
     end,
   })
@@ -28,14 +28,14 @@ function M.setup()
 
   lspconfig.lua_ls.setup({
     on_attach = function(client, bufnr)
-      mappings.on_attach(client, bufnr)
+      mappings.on_attach(bufnr)
       lsp_highlight_document(client, bufnr)
     end,
   })
 
   lspconfig.clangd.setup({
     on_attach = function(client, bufnr)
-      mappings.on_attach(client, bufnr)
+      mappings.on_attach(bufnr)
       lsp_highlight_document(client, bufnr)
     end,
   })

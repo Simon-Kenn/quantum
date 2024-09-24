@@ -1,4 +1,4 @@
-local function lsp_highlight_document(client, buffer)
+local function lsp_highlight_document(client, bufnr)
   if client.server_capabilities.documentHighlightProvider then
     local augroup =
       vim.api.nvim_create_augroup("lsp_highlight_document" .. client.id, { clear = true })
@@ -7,14 +7,14 @@ local function lsp_highlight_document(client, buffer)
         vim.lsp.buf.document_highlight()
       end,
       group = augroup,
-      buffer = buffer,
+      buffer = bufnr,
     })
     vim.api.nvim_create_autocmd("CursorMoved", {
       callback = function()
         vim.lsp.buf.clear_references()
       end,
       group = augroup,
-      buffer = buffer,
+      buffer = bufnr,
     })
     vim.api.nvim_create_autocmd("LspDetach", {
       callback = function(args)
