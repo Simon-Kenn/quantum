@@ -17,7 +17,12 @@ function M.setup()
     end,
   }
 
-  lazydev.setup() -- TODO: shoul be done only on lua file
+  lazydev.setup {
+    library = {
+      '~/Codes/quantum',
+    },
+  } -- TODO: shoul be done only on lua file
+
   lspconfig.lua_ls.setup {
     on_attach = function(client, bufnr)
       mappings.on_attach(client, bufnr)
