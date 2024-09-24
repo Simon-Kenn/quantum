@@ -18,9 +18,10 @@ function M.setup()
 
   o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
 
-  o.foldlevel = 100
+  o.foldlevel = 99
   o.foldenable = true
-  o.foldcolumn = 'auto'
+  -- o.foldcolumn = 'auto'
+  o.foldtext = ''
   o.foldmethod = 'expr'
   o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
   o.fillchars = {
@@ -29,6 +30,12 @@ function M.setup()
     foldsep = ' ',
     foldopen = '',
     foldclose = '',
+  }
+  o.list = true --show some hidden characters
+  o.listchars = {
+    tab = '> ',
+    nbsp = '␣',
+    trail = '•',
   }
 
   o.swapfile = false
