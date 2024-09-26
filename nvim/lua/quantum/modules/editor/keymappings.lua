@@ -71,7 +71,7 @@ function M.on_attach(bufnr)
 
   local opts = { noremap = true, silent = true }
   wk.add({
-    { "<leader>a", group = "LSP" },
+    { "<leader>a", group = "Code" },
   })
 
   buf_set_keymap("n", "gd", vim.lsp.buf.definition, "Goto definition", opts)
