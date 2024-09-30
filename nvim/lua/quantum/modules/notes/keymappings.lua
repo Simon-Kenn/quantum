@@ -63,6 +63,26 @@ local preset = {
   norg = {
     n = {
       {
+        "<localleader>w",
+        "<cmd>Neorg toc<cr>",
+        opts = { desc = "Table of content" },
+      },
+      {
+        "<localleader>W",
+        "<cmd>Neorg toc qflist<cr>",
+        opts = { desc = "Table of content -> qflist" },
+      },
+      {
+        "<localleader>r",
+        "<Plug>(neorg.text-objects.item-up)",
+        opts = { desc = "Move item up" },
+      },
+      {
+        "<localleader>s",
+        "<Plug>(neorg.text-objects.item-down)",
+        opts = { desc = "Move item down" },
+      },
+      {
         "<localleader>fb",
         "<cmd>Telescope neorg find_backlinks<cr>",
         opts = { desc = "Find backlinks" },
@@ -281,6 +301,61 @@ local preset = {
         "«",
         "<Plug>(neorg.promo.demote.range)",
         opts = { desc = "Demote Objects in Range" },
+      },
+    },
+    -- TODO: o and x should be the same
+    o = {
+      {
+        "ih",
+        "<Plug>(neorg.text-objects.textobject.heading.inner)",
+        opts = { desc = "Inner heading" },
+      },
+      {
+        "ah",
+        "<Plug>(neorg.text-objects.textobject.heading.outer)",
+        opts = { desc = "Outer heading" },
+      },
+      {
+        "it",
+        "<Plug>(neorg.text-objects.textobject.tag.inner)",
+        opts = { desc = "Inner tag" },
+      },
+      {
+        "at",
+        "<Plug>(neorg.text-objects.textobject.tag.outer)",
+        opts = { desc = "Outer tag" },
+      },
+      {
+        "al",
+        "<Plug>(neorg.text-objects.textobject.list.outer)",
+        opts = { desc = "Outer list" },
+      },
+    },
+    x = {
+      {
+        "ih",
+        "<Plug>(neorg.text-objects.textobject.heading.inner)",
+        opts = { desc = "Inner heading" },
+      },
+      {
+        "ah",
+        "<Plug>(neorg.text-objects.textobject.heading.outer)",
+        opts = { desc = "Outer heading" },
+      },
+      {
+        "it",
+        "<Plug>(neorg.text-objects.textobject.tag.inner)",
+        opts = { desc = "Inner tag" },
+      },
+      {
+        "at",
+        "<Plug>(neorg.text-objects.textobject.tag.outer)",
+        opts = { desc = "Outer tag" },
+      },
+      {
+        "al",
+        "<Plug>(neorg.text-objects.textobject.list.outer)",
+        opts = { desc = "Outer list" },
       },
     },
   },
