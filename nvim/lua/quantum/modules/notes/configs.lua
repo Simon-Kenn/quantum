@@ -1,4 +1,6 @@
+local utils = require("quantum.modules.notes.utils")
 local M = {}
+
 -- TODO: add image support
 
 function M.setup()
@@ -32,6 +34,13 @@ function M.setup()
       ["core.esupports.metagen"] = {
         config = {
           type = "auto",
+        },
+      },
+      ["core.journal"] = {
+        config = {
+          toc_format = function(entries)
+            return utils.toc_format(entries)
+          end,
         },
       },
       ["core.keybinds"] = {
