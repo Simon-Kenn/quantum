@@ -1,4 +1,5 @@
 local M = {}
+-- TODO: add image support
 
 function M.setup()
   require("neorg").setup({
@@ -31,6 +32,11 @@ function M.setup()
       ["core.esupports.metagen"] = {
         config = {
           type = "auto",
+        },
+      },
+      ["core.keybinds"] = {
+        config = {
+          default_keybinds = false,
         },
       },
       ["core.text-objects"] = {},

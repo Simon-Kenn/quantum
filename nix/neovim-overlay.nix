@@ -81,7 +81,6 @@ with final.pkgs.lib; let
     # -- Notes --
     neorg
     neorg-telescope
-
   ];
 
   extraPackages = with pkgs; [

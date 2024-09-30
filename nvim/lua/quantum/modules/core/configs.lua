@@ -6,13 +6,16 @@ function M.setup()
     icons = {
       rules = {
         { pattern = "tag", icon = "", hl = "@string" },
-        { pattern = "todo", icon = "", hl = "@string" },
+        { pattern = "task", icon = "", hl = "@string" },
         { pattern = "agenda", icon = "", hl = "@string" },
+        { pattern = "calendar", icon = "", hl = "@string" },
         { pattern = "list", icon = "", hl = "@string" },
         { pattern = "note", icon = "", hl = "@string" },
-        { pattern = "backlink", icon = "󰌹", hl = "@string" },
+        { pattern = "link", icon = "󰌹", hl = "@string" },
         { pattern = "toc", icon = "󱏒", hl = "@string" },
         { pattern = "date", icon = "󰃭", hl = "@string" },
+        { pattern = "index", icon = "󰦄", hl = "@string" },
+        { pattern = "journal", icon = "", hl = "@string" },
 
         { plugin = "oil.nvim", icon = "󰏇", hl = "@string" },
         { pattern = "selecton", icon = "󰒉", hl = "@string" },

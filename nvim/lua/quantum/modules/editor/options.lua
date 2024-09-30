@@ -18,7 +18,8 @@ function M.setup()
 
   o.scrolloff = 999
 
-  o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+  o.sessionoptions =
+    "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals"
 
   o.foldlevel = 99
   o.foldenable = true
