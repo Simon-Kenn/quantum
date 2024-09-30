@@ -21,6 +21,16 @@
       url = "github:yetone/avante.nvim";
       flake = false;
     };
+
+    neorg-interim-ls = {
+      url = "github:benlubas/neorg-interim-ls";
+      flake = false;
+    };
+
+    neorg-templates = {
+      url = "github:pysan3/neorg-templates";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {

@@ -81,6 +81,9 @@ with final.pkgs.lib; let
     # -- Notes --
     neorg
     neorg-telescope
+    (mkNvimPlugin inputs.neorg-interim-ls "neorg-interim-ls")
+    (mkNvimPlugin inputs.neorg-templates "neorg-templates")
+
   ];
 
   extraPackages = with pkgs; [

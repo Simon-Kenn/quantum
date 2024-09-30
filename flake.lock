@@ -263,6 +263,22 @@
         "type": "github"
       }
     },
+    "neorg-interim-ls": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1725801496,
+        "narHash": "sha256-rc7dd70N2mhcsA6ii5V+HJGqvboKzAbpKoZA9m5V3Z8=",
+        "owner": "benlubas",
+        "repo": "neorg-interim-ls",
+        "rev": "a5ad59d6db43a5867eb15faad2a62f23c85de201",
+        "type": "github"
+      },
+      "original": {
+        "owner": "benlubas",
+        "repo": "neorg-interim-ls",
+        "type": "github"
+      }
+    },
     "neorg-overlay": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -299,6 +315,22 @@
       "original": {
         "owner": "nvim-neorg",
         "repo": "neorg-telescope",
+        "type": "github"
+      }
+    },
+    "neorg-templates": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707616388,
+        "narHash": "sha256-nZOAxXSHTUDBpUBS/Esq5HHwEaTB01dI7x5CQFB3pcw=",
+        "owner": "pysan3",
+        "repo": "neorg-templates",
+        "rev": "2808ec9796e0ba89377e1eeb73bd25af3d10ef7f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pysan3",
+        "repo": "neorg-templates",
         "type": "github"
       }
     },
@@ -473,7 +505,9 @@
         "cmp-nerdfont": "cmp-nerdfont",
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
+        "neorg-interim-ls": "neorg-interim-ls",
         "neorg-overlay": "neorg-overlay",
+        "neorg-templates": "neorg-templates",
         "nixpkgs": "nixpkgs_5",
         "nvim-cmp-font": "nvim-cmp-font"
       }

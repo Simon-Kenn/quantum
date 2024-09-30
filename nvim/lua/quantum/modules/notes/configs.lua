@@ -48,8 +48,25 @@ function M.setup()
           default_keybinds = false,
         },
       },
+      ["core.completion"] = {
+        config = {
+          engine = { module_name = "external.lsp-completion" },
+        },
+      },
       ["core.text-objects"] = {},
       ["core.integrations.telescope"] = {},
+
+      ["external.interim-ls"] = {
+        config = {
+          completion_provider = {
+            enable = true,
+            categories = false,
+          },
+        },
+      },
+      ["external.templates"] = {
+        config = {},
+      },
     },
   })
 end
