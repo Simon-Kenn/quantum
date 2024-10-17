@@ -72,6 +72,8 @@ with final.pkgs.lib; let
     dashboard-nvim
     statuscol-nvim
     neo-tree-nvim
+    dressing-nvim
+    nui-nvim
 
     # -- git --
     diffview-nvim
@@ -83,6 +85,9 @@ with final.pkgs.lib; let
     neorg-telescope
     (mkNvimPlugin inputs.neorg-interim-ls "neorg-interim-ls")
     (mkNvimPlugin inputs.neorg-templates "neorg-templates")
+
+    # -- IA -- 
+    avante-nvim
 
   ];
 
@@ -96,6 +101,8 @@ with final.pkgs.lib; let
     # Formater
     stylua
     rustfmt
+    rustc
+    cargo
     nixfmt-classic
 
     ripgrep
