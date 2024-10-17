@@ -17,11 +17,6 @@
       flake = false;
     };
 
-    avante-nvim = {
-      url = "github:yetone/avante.nvim";
-      flake = false;
-    };
-
     neorg-interim-ls = {
       url = "github:benlubas/neorg-interim-ls";
       flake = false;
