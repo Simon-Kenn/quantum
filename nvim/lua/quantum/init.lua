@@ -6,14 +6,14 @@ function M.setup()
   local ai = require("quantum.modules.ai")
   local git = require("quantum.modules.git")
   local ui = require("quantum.modules.ui")
-  local notes = require("quantum.modules.notes")
+  --local notes = require("quantum.modules.notes")
 
   core.setup()
   editor.setup()
   ai.setup()
   git.setup()
   ui.setup()
-  notes.setup()
+  --notes.setup()
 end
 
 return M

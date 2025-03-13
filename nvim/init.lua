@@ -1,2 +1,2 @@
-local quantum = require('quantum')
+local quantum = require("quantum")
 quantum.setup()
